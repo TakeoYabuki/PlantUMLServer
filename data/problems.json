@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "基本的な例",
+        "theme": "シーケンス図",
+        "uml": "@startuml\nAlice -> Bob : Hello\nBob --> Alice : Hi\n@enduml"
+    },
+    {
+        "id": 2,
+        "title": "分類子の宣言",
+        "theme": "シーケンス図",
+        "uml": "@startuml\nactor User\nparticipant Browser\nparticipant Server\ndatabase Database\n\nUser -> Browser : Request\nBrowser -> Server : Send request\nServer -> Database : Query\nDatabase --> Server : Result\nServer --> Browser : Response\nBrowser --> User : Display\n@enduml"
+    },
+    {
+        "id": 3,
+        "title": "矢印の見た目を変える",
+        "theme": "シーケンス図",
+        "uml": "@startuml\nAlice -> Bob : normal\nAlice --> Bob : dotted\nAlice ->> Bob : thin arrow\nAlice -[#red]> Bob : red arrow\nAlice -[#blue,dashed]> Bob : blue dashed arrow\n@enduml"
+    },
+    {
+        "id": 4,
+        "title": "すべての分類子にまたがるノート",
+        "theme": "シーケンス図",
+        "uml": "@startuml\nparticipant Alice\nparticipant Bob\nparticipant Charlie\n\nAlice -> Bob : Hello\nBob -> Charlie : Request\n\nnote across\nThis note spans across all participants.\nend note\n\nCharlie --> Bob : Response\nBob --> Alice : Done\n@enduml"
+    },
+    {
+        "id": 5,
+        "title": "ライフラインの活性化",
+        "theme": "シーケンス図",
+        "uml": "@startuml\nautoactivate on\nalice -> bob : hello\nbob -> bob : self call\nbill -> bob #005500 : hello from thread 2\nbob -> george ** : create\nreturn done in thread 2\nreturn rc\nbob -> george !! : delete\nreturn success\n@enduml"
+    }
+]
